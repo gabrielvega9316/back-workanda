@@ -21,6 +21,6 @@ app.use(cors({
 app.use('/api', userRoutes);
 
 app.listen(port, () => {
-  console.log(`Servidor escuchando en el puerto ${port}`);
+  console.log(`Server listening on port ${port}`);
 });
 

@@ -12,15 +12,15 @@ const pool = mysql.createPool(dbConfig);
 
 // Manejo de errores en la evento "error" del pool
 pool.on('error', (err) => {
-  console.error('Error en la conexión de la base de datos:', err.code);
+  console.error('Error in the database connection:', err.code);
 });
 
 // Comprueba la conexión inicial al crear el pool
 pool.getConnection((err, connection) => {
   if (err) {
-    console.error('Error al conectar a la base de datos:', err);
+    console.error('Error in the database connection:', err);
   } else {
-    console.log('Conexión exitosa a la base de datos');
+    console.log('Successful connection to the database');
     connection.release();
   }
 });
