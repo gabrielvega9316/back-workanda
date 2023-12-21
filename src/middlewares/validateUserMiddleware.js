@@ -6,6 +6,16 @@ function validateUser(req, res, next) {
     }
   
     next();
-  }
+}
+
+function validateUpdateUser(req, res, next){
+  const { username, email } = req.body;
   
-  module.exports = validateUser;
+    if (!username || !email ) {
+      return res.status(400).json({ error: 'Username and email  are required.' });
+    }
+  
+    next();
+}
+  
+module.exports = {validateUser , validateUpdateUser};
