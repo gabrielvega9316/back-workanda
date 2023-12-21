@@ -61,7 +61,6 @@ class UserRepository {
     }
    
     async getUserByEmail(email) {
-        console.log('⚠️ email in repository', email)
         try {
             const [rows, fields] = await pool.promise().query('SELECT * FROM users WHERE email = ?', [email]);
             return rows[0]; 
